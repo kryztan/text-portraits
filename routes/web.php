@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
     return view('text-portraits');
+});
+
+Route::get('/portraits/louen', function () {
+    return view('portraits.louen');
 });
