@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    Hello there!
+    Text Portraits App
+    Coming soon!
 </body>
 
 </html>
