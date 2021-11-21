@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    Text Portraits App
-    Coming soon!
+    <div>{{ env('APP_NAME') }}</div>
+    <div>Coming soon!</div>
 </body>
 
 </html>
