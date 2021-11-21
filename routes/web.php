@@ -20,3 +20,6 @@ Route::get('/', function () {
 Route::get('/portraits/louen', function () {
     return view('portraits.louen');
 });
+Route::get('/portraits/louen-bnw', function () {
+    return view('portraits.louen-bnw');
+});

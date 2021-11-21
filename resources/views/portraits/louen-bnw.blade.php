@@ -1,6 +1,6 @@
 <x-layout>
     <div class="text-portrait-container">
-        <p class="text-portrait" style="background-image: url({{ asset('images/louen.jpg') }})">
+        <p class="text-portrait" style="background-image: url({{ asset('images/louen-bnw.jpg') }})">
             Have I ever told you
             I want you to the bone?
             Have I ever called you
