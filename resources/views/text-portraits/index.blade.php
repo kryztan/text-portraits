@@ -2,9 +2,13 @@
 <link href="{{ asset('css/text-portrait.css') }}" rel="stylesheet">
 @endpush
 
+@push('scripts')
+<script src="{{ asset('js/text-portrait.js') }}"></script>
+@endpush
+
 <x-layout>
     <div class="content-container flex">
-        <div class="max-w-max min-w-max pl-4 pt-4">
+        <div class="max-w-max min-w-max p-4" style="min-width: 400px;">
             <form action="{{ route('text-portraits.index') }}" method="POST" enctype="multipart/form-data">
                 @csrf
 
@@ -30,10 +34,10 @@
                                             <input id="image" name="image" type="file" accept="image/png, image/jpeg"
                                                 class="sr-only">
                                         </label>
-                                        <p class="pl-1">or drag and drop</p>
+                                        {{-- <p class="pl-1">or drag and drop</p> --}}
                                     </div>
                                     <p class="text-xs text-gray-500">
-                                        PNG, JPG, GIF up to 10MB
+                                        PNG, JPG, or JPEG
                                     </p>
                                 </div>
                             </div>
@@ -46,11 +50,11 @@
                             <div class="mt-1">
                                 <textarea id="about" name="about" rows="3"
                                     class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md"
-                                    placeholder="you@example.com"></textarea>
+                                    placeholder="Placeholder"></textarea>
                             </div>
-                            <p class="mt-2 text-sm text-gray-500">
+                            {{-- <p class="mt-2 text-sm text-gray-500">
                                 Brief description for your profile. URLs are hyperlinked.
-                            </p>
+                            </p> --}}
                         </div>
                     </div>
                     <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
@@ -1053,23 +1057,4 @@
             </p>
         </div>
     </div>
-
-    <script>
-        $(document).ready(function () {
-
-            $(document).on("change", "#image", function () {
-                if (this.files && this.files[0]) {
-                    var reader = new FileReader();
-                    reader.onload = function (e) {
-                        console.log('wew', e);
-                        $(".text-portrait").css("background-image", "url("+ e.target.result + ")");
-                    };
-                    reader.readAsDataURL(this.files[0]);
-                } else {
-                    console.log('no');
-                }
-            });
-    
-        });
-    </script>
 </x-layout>
