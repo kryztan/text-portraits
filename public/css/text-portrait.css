@@ -1,6 +1,11 @@
 .content-container {
     background-color: #262626;
 }
+
+.controls {
+    min-width: 400px;
+}
+
 .text-portrait-container {
     display: flex;
     align-items: center;
@@ -28,4 +33,28 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+@media screen and (max-width: 1280px) {
+    .controls {
+        min-width: 320px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    #text {
+        min-width: 280px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    #text {
+        min-width: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .controls-flex {
+        flex-direction: column;
+    }
 }
