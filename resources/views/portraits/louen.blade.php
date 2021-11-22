@@ -1,3 +1,7 @@
+@push('styles')
+<link href="{{ asset('css/home.css') }}" rel="stylesheet">
+@endpush
+
 <x-layout>
     <div class="text-portrait-container">
         <p class="text-portrait" style="background-image: url({{ asset('images/louen.jpg') }})">
