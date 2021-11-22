@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    $(document).on("change", "#image", function () {
+    $("#image").change(function () {
         if (this.files && this.files[0]) {
             var reader = new FileReader();
             reader.onload = function (e) {
@@ -14,4 +14,17 @@ $(document).ready(function () {
             console.log("no");
         }
     });
+
+    $("#submit").click(function () {
+        let text = $("#text").val();
+
+        while (text.length < 300000) {
+            text += " " + text;
+            console.log(text.length);
+        }
+
+        $(".text-portrait").text(text);
+    });
+
+    $("#submit").trigger("click");
 });

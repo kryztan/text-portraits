@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
     margin: 0;
     background-color: #262626;
 }
@@ -20,4 +20,12 @@
     /* background-attachment: fixed; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
+}
+.unselectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
