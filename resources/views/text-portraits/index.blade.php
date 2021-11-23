@@ -7,7 +7,7 @@
 @endpush
 
 <x-layout>
-    <div class="content-container flex flex-col lg:flex-row items-center lg:items-start">
+    <div class="content-container flex flex-col lg:flex-row items-center lg:items-start w-screen">
         <div class="controls max-w-max min-w-max p-4">
             <div class="shadow rounded-md overflow-hidden">
                 <div
@@ -32,7 +32,6 @@
                                         <input id="image" name="image" type="file" accept="image/png, image/jpeg"
                                             class="sr-only">
                                     </label>
-                                    {{-- <p class="pl-1">or drag and drop</p> --}}
                                 </div>
                                 <p class="text-xs text-gray-500">
                                     PNG, JPG, or JPEG
