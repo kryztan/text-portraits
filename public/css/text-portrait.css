@@ -1,7 +1,6 @@
 .content-container {
     background-color: #262626;
 }
-
 .controls {
     min-width: 400px;
 }
@@ -22,7 +21,6 @@
     line-height: 12px;
     background-position: center;
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
     -webkit-background-clip: text;
     -webkit-text-fill-color: rgba(255, 255, 255, 0);
 }
@@ -50,11 +48,5 @@
 @media screen and (max-width: 640px) {
     #text {
         min-width: auto;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .controls-flex {
-        flex-direction: column;
     }
 }

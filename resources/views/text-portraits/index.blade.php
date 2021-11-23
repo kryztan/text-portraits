@@ -7,7 +7,7 @@
 @endpush
 
 <x-layout>
-    <div class="content-container flex lg:flex-row flex-col items-center lg:items-start">
+    <div class="content-container flex flex-col lg:flex-row items-center lg:items-start">
         <div class="controls max-w-max min-w-max p-4">
             <div class="shadow rounded-md overflow-hidden">
                 <div
@@ -109,9 +109,6 @@ I want you to the bone, bone, ooh
 I want you to the bone
                             </textarea>
                         </div>
-                        {{-- <p class="mt-2 text-sm text-gray-500">
-                            Brief description for your profile. URLs are hyperlinked.
-                        </p> --}}
                     </div>
                 </div>
                 <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
