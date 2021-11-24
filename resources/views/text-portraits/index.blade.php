@@ -7,7 +7,7 @@
 @endpush
 
 <x-layout>
-    <div class="content-container flex flex-col lg:flex-row items-center lg:items-start w-screen">
+    <div class="content-container flex flex-col lg:flex-row items-center lg:items-start w-full">
         <div class="controls max-w-max min-w-max p-4">
             <div class="shadow rounded-md overflow-hidden">
                 <div
