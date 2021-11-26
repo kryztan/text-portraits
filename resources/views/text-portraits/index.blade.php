@@ -47,7 +47,7 @@
                         <div class="mt-1">
                             <textarea id="text" name="text" rows="7"
                                 class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-sm border border-gray-300 rounded-md resize-none"
-                                placeholder="I love you">
+                                placeholder="Your message or lyrics">
 Have I ever told you
 I want you to the bone?
 Have I ever called you
