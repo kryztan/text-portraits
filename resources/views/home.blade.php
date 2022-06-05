@@ -4,6 +4,6 @@
 
 <x-layout>
     <div class="content-container">
-        <div class="welcome-message">Coming soon</div>
+        <div class="welcome-message">Coming soon!</div>
     </div>
 </x-layout>
