@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\TextPortraitsController;
+use App\Http\Controllers\WorkoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,5 @@ Route::get('/', function () {
 });
 
 Route::get('text-portraits', [TextPortraitsController::class, 'index'])->name('text-portraits.index');
+
+Route::get('workout', [WorkoutController::class, 'index'])->name('workout.index');
