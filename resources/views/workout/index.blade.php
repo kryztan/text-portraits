@@ -26,11 +26,10 @@
             dataType: "json",
             data: { yo: 7 },
             success: function( response ) {
-                console.log(123);
-                console.log(response);
-                var data = $.parseJSON(response);
-
-                alert(data.message);
+                console.log(0, response);
+                // var data = $.parseJSON(response);
+                //
+                // alert(data.message);
             }
         }).always(function(data, textStatus, errorThrown) {
             console.log("done");
