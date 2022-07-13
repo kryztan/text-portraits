@@ -73,6 +73,7 @@ class WorkoutController extends Controller
             if ($workout_id) {
                 foreach ($exercises as $eIndex => $exercise) {
                     $workout_exercise_id = DB::table('workout_exercises')->insertGetId([
+                        'workout_id' => $workout_id,
                         'exercise_id' => 1,
                         'exercise' => $exercise
                     ]);
