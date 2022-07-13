@@ -18,24 +18,16 @@
     });
 
     $('.submit').click(function() {
-        console.log(1, 'one');
-
         $.ajax({
             type: "POST",
             url: '/workoutprocess',
-            dataType: "json",
-            data: { yo: 7 },
-            success: function( response ) {
-                console.log(0, response);
-                // var data = $.parseJSON(response);
-                //
-                // alert(data.message);
-            }
-        }).always(function(data, textStatus, errorThrown) {
-            console.log("done");
-            console.log(1, data);
-            console.log(2, textStatus);
-            console.log(3, errorThrown);
+            data: { yo: 8 },
+            dataType: "json"
+        }).done(function(data) {
+            let response = $.parseJSON(data);
+
+            console.log(response);
+            alert(response.message);
         });
     });
 </script>
