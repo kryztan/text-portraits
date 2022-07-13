@@ -1,9 +1,5 @@
 <x-layout>
-    <textarea class="workouts" name="workouts" rows="5 cols="50">
-        Workout 7/5
-        bench press
-        50w 10r (3x)
-    </textarea>
+    <textarea class="workouts" name="workouts" rows="5 cols="50"></textarea>
 
     <button type="button" class="submit">Submit!</button>
 </x-layout>
