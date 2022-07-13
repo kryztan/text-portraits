@@ -23,16 +23,16 @@ class WorkoutController extends Controller
             if ($index === array_key_first($lines)) {
                 $name = $line;
             }
+        }
 
-            if (isset($name)) {
-                $workout_id = DB::table('workouts')->insertGetId([
-                    'name' => $name,
-                    'user_id' => 1,
-                    'description' => $text
-                ]);
+        if (isset($name)) {
+            $workout_id = DB::table('workouts')->insertGetId([
+                'name' => $name,
+                'user_id' => 1,
+                'description' => $text
+            ]);
 
-                $workout_ids[] = $workout_id;
-            }
+            $workout_ids[] = $workout_id;
         }
 
         return response()->json([
