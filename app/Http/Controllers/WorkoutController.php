@@ -10,4 +10,14 @@ class WorkoutController extends Controller
     {
         return view('workout.index');
     }
+
+    public function workoutprocess(Request $request)
+    {
+        $response = '123';
+        $response .= $request->yo;
+
+        return response()->json([
+            'message' => '123'
+        ]);
+    }
 }
