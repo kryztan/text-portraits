@@ -63,8 +63,8 @@ class WorkoutController extends Controller
             $date = "20" . $dateArr[3] . "-" . $dateArr[1] . "-" . $dateArr[2];
 
             $workout_id = DB::table('workouts')->insertGetId([
-                'name' => $name,
                 'user_id' => 1,
+                'name' => $name,
                 'date' => $date,
                 'description' => $text
             ]);
