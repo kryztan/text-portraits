@@ -24,11 +24,7 @@
             },
             dataType: "json"
         }).done(function(data) {
-            // console.log(data);
-            // let response = $.parseJSON(data);
-
             console.log(data);
-            alert(data.message);
         });
     });
 </script>

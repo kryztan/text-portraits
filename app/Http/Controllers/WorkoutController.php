@@ -14,14 +14,19 @@ class WorkoutController extends Controller
 
     public function store(Request $request)
     {
-        $response = '123';
-        $response .= $request->yo;
+        $text = $request->text;
 
         $workouts = DB::table('workouts')->get();
 
+        $workout_id = DB::table('workouts')->insertGetId([
+            'name' => 'Workout Test',
+            'user_id' => 1,
+            'description' => $text
+        ]);
+
         return response()->json([
-            'message' => '123',
-            'workouts' => $workouts,
+            'workout_id' => $workout_id,
+            'text' => $text,
         ]);
     }
 }
