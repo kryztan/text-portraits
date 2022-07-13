@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class WorkoutController extends Controller
 {
@@ -16,8 +17,11 @@ class WorkoutController extends Controller
         $response = '123';
         $response .= $request->yo;
 
+        $workouts = DB::table('workouts')->get();
+
         return response()->json([
-            'message' => '123'
+            'message' => '123',
+            'workouts' => $workouts,
         ]);
     }
 }
