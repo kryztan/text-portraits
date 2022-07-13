@@ -59,10 +59,13 @@ class WorkoutController extends Controller
 
         // Insert workout
         if (isset($name)) {
+            $dateArr = explode(" ", $name);
+            $date = "20" . $dateArr[3] . "-" . $dateArr[1] . "-" . $dateArr[2];
+
             $workout_id = DB::table('workouts')->insertGetId([
                 'name' => $name,
                 'user_id' => 1,
-                'date' => '2022-07-13',
+                'date' => $date,
                 'description' => $text
             ]);
 
@@ -91,6 +94,8 @@ class WorkoutController extends Controller
 
         return response()->json([
             'workout_id' => $workout_id ?? 0,
+            'exercises' => $exercises ?? [],
+            'exercise_sets' => $exercise_sets ?? [],
             'text' => $text,
         ]);
     }
