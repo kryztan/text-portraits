@@ -12,7 +12,7 @@ class WorkoutController extends Controller
         return view('workout.index');
     }
 
-    public function workoutprocess(Request $request)
+    public function store(Request $request)
     {
         $response = '123';
         $response .= $request->yo;

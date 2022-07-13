@@ -1,7 +1,5 @@
 <x-layout>
-    <div>Workout</div>
-
-    <textarea id="workouts" name="workouts" rows="5 cols="50">
+    <textarea class="workouts" name="workouts" rows="5 cols="50">
         Workout 7/5
         bench press
         50w 10r (3x)
@@ -20,8 +18,10 @@
     $('.submit').click(function() {
         $.ajax({
             type: "POST",
-            url: '/workoutprocess',
-            data: { yo: 8 },
+            url: '/workout',
+            data: {
+                text: $('.workouts').val()
+            },
             dataType: "json"
         }).done(function(data) {
             // console.log(data);

@@ -22,5 +22,4 @@ Route::get('/', function () {
 Route::get('text-portraits', [TextPortraitsController::class, 'index'])->name('text-portraits.index');
 
 Route::get('workout', [WorkoutController::class, 'index'])->name('workout.index');
-
-Route::post('workoutprocess', [WorkoutController::class, 'workoutprocess'])->name('workout.workoutprocess');
+Route::post('workout', [WorkoutController::class, 'store'])->name('workout.store');
