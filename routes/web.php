@@ -23,4 +23,4 @@ Route::get('text-portraits', [TextPortraitsController::class, 'index'])->name('t
 
 Route::get('workout', [WorkoutController::class, 'index'])->name('workout.index');
 
-Route::post('workoutprocess', [WorkoutController::class, 'index'])->name('workout.index');
+Route::post('workoutprocess', [WorkoutController::class, 'workoutprocess'])->name('workout.workoutprocess');

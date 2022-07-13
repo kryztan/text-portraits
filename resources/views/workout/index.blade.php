@@ -17,7 +17,7 @@
         }
     });
 
-    $('.submit').click(function () {
+    $('.submit').click(function() {
         console.log(1, 'one');
 
         $.ajax({
@@ -32,6 +32,11 @@
 
                 alert(data.message);
             }
+        }).always(function(data, textStatus, errorThrown) {
+            console.log("done");
+            console.log(1, data);
+            console.log(2, textStatus);
+            console.log(3, errorThrown);
         });
     });
 </script>
