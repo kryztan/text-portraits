@@ -24,11 +24,11 @@
             data: { yo: 8 },
             dataType: "json"
         }).done(function(data) {
-            console.log(data);
-            let response = $.parseJSON(data);
+            // console.log(data);
+            // let response = $.parseJSON(data);
 
-            console.log(response);
-            alert(response.message);
+            console.log(data);
+            alert(data.message);
         });
     });
 </script>
