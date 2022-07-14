@@ -51,9 +51,7 @@ class WorkoutController extends Controller
                 $before_set = true;
             } elseif ($before_set) {
                 // Get exercise set
-                $exercise_sets[$curr_exercise_index][] = [
-                    'set' => $line
-                ];
+                $exercise_sets[$curr_exercise_index][] = $line;
             }
         }
 
