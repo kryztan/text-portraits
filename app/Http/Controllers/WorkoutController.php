@@ -79,22 +79,20 @@ class WorkoutController extends Controller
 
                     // Insert sets
                     if ($workout_exercise_id) {
-                        foreach ($exercise_sets[$eIndex] as $sIndex => $exercise_set) {
-                            Log::debug('Inserting set 1');
+                        $set_number = 0;
 
+                        foreach ($exercise_sets[$eIndex] as $exercise_set) {
                             $set = $this->parseSet($exercise_set);
 
-                            Log::debug('Inserting set 2');
-
                             for ($i = 0; $i < $set['times']; $i++) {
-                                Log::debug('Inserting set 3');
+                                $set_number++;
+
                                 DB::table('workout_exercise_sets')->insert([
                                     'workout_exercise_id' => $workout_exercise_id,
                                     'number' => $sIndex + 1 + $i,
                                     'weight' => $set['weight'],
                                     'reps' => $set['reps']
                                 ]);
-                                Log::debug('Inserting set 4');
                             }
                         }
                     }
