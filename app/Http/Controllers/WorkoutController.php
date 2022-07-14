@@ -89,7 +89,7 @@ class WorkoutController extends Controller
 
                                 DB::table('workout_exercise_sets')->insert([
                                     'workout_exercise_id' => $workout_exercise_id,
-                                    'number' => $sIndex + 1 + $i,
+                                    'number' => $set_number,
                                     'weight' => $set['weight'],
                                     'reps' => $set['reps']
                                 ]);
