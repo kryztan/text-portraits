@@ -81,12 +81,16 @@ class WorkoutController extends Controller
                     // Insert sets
                     if ($workout_exercise_id) {
                         foreach ($exercise_sets[$eIndex] as $sIndex => $exercise_set) {
-                            DB::table('workout_exercise_sets')->insert([
-                                'workout_exercise_id' => $workout_exercise_id,
-                                'number' => $sIndex + 1,
-                                'weight' => $exercise_set['set'],
-                                'reps' => 1
-                            ]);
+                            $set = $this->parseSet($exercise_set);
+
+                            for ($i = 0; $i < $set['times']; $i++) {
+                                DB::table('workout_exercise_sets')->insert([
+                                    'workout_exercise_id' => $workout_exercise_id,
+                                    'number' => $sIndex + 1 + $i,
+                                    'weight' => $set['weight'],
+                                    'reps' => $set['reps']
+                                ]);
+                            }
                         }
                     }
                 }
@@ -99,5 +103,33 @@ class WorkoutController extends Controller
             'exercise_sets' => $exercise_sets ?? [],
             'text' => $text,
         ]);
+    }
+
+    function parseSet(string $set) {
+        $set = trim($set);
+        $setArr = explode(" ", $set);
+
+        $weight = "";
+        $reps = 0;
+        $times = 1;
+
+        switch (count($setArr)) {
+            case 1:
+                $reps = str_replace("r", "", $setArr[0]);
+                break;
+            case 3:
+                $times = str_replace("(", "", $setArr[2]);
+                $times = str_replace("x)", "", $times);
+            case 2:
+                $weight = $setArr[0];
+                $reps = str_replace("r", "", $setArr[1]);
+                break;
+        }
+
+        return [
+            'weight' => $weight,
+            'reps' => $reps,
+            'times' => $times
+        ];
     }
 }
