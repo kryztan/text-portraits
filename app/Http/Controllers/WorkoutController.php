@@ -87,6 +87,8 @@ class WorkoutController extends Controller
                             for ($i = 0; $i < $set['times']; $i++) {
                                 $set_number++;
 
+                                //todo description array to string (also null)
+
                                 DB::table('workout_exercise_sets')->insert([
                                     'workout_exercise_id' => $workout_exercise_id,
                                     'number' => $set_number,
@@ -109,30 +111,52 @@ class WorkoutController extends Controller
     }
 
     function parseSet(string $set) {
-        $set = trim($set);
-        $setArr = explode(" ", $set);
-
         $weight = "";
         $reps = 0;
         $times = 1;
+        $description = [];
 
-        switch (count($setArr)) {
-            case 1:
-                $reps = str_replace("r", "", $setArr[0]);
-                break;
-            case 3:
-                $times = str_replace("(", "", $setArr[2]);
-                $times = str_replace("x)", "", $times);
-            case 2:
-                $weight = $setArr[0];
-                $reps = str_replace("r", "", $setArr[1]);
-                break;
+        $set = trim($set);
+        $setArr = explode("-", $set, 2);
+
+        // Description
+        if (count($setArr) == 2) {
+            $description[] = $setArr[1];
         }
+
+        $set = trim($setArr[0]);
+        $setArr = explode(" ", $set);
+
+        // Sloppy
+        if ($setArr[count($setArr) - 1] == "*") {
+            array_unshift($description, "sloppy");
+            unset($setArr[count($setArr) - 1]);
+        }
+
+        // Times
+        if ($setArr[count($setArr) - 1][0] == "(") {
+            $times = str_replace("(", "", $setArr[count($setArr) - 1]);
+            $times = str_replace("x)", "", $times);
+            unset($setArr[count($setArr) - 1]);
+        }
+
+        // Weight and Reps
+        $repsStr = $setArr[0];
+        if (count($setArr) == 2) {
+            $weight = $setArr[0];
+            $repsStr = $setArr[1];
+        }
+        if (substr($repsStr, -1) == "s") {
+            array_unshift($description, "seconds");
+        }
+        $reps = str_replace("r", "", $repsStr);
+        $reps = str_replace("s", "", $reps);
 
         return [
             'weight' => $weight,
             'reps' => $reps,
-            'times' => $times
+            'times' => $times,
+            'description' => $description
         ];
     }
 }
