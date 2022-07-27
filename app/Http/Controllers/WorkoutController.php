@@ -88,12 +88,24 @@ class WorkoutController extends Controller
                                 $set_number++;
 
                                 //todo description array to string (also null)
+                                if (!empty($set['description'])) {
+                                    $description = "";
+
+                                    foreach ($set['description'] as $k => $desc_item) {
+                                        $description .= $desc_item;
+
+                                        if ($k != array_key_last($set['description'])) {
+                                            $description .= ", ";
+                                        }
+                                    }
+                                }
 
                                 DB::table('workout_exercise_sets')->insert([
                                     'workout_exercise_id' => $workout_exercise_id,
                                     'number' => $set_number,
                                     'weight' => $set['weight'],
-                                    'reps' => $set['reps']
+                                    'reps' => $set['reps'],
+                                    'description' => $description ?? null
                                 ]);
                             }
                         }
