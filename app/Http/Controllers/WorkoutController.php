@@ -87,7 +87,6 @@ class WorkoutController extends Controller
                             for ($i = 0; $i < $set['times']; $i++) {
                                 $set_number++;
 
-                                //todo description array to string (also null)
                                 if (!empty($set['description'])) {
                                     $description = "";
 
@@ -98,6 +97,8 @@ class WorkoutController extends Controller
                                             $description .= ", ";
                                         }
                                     }
+                                } else {
+                                    $description = null;
                                 }
 
                                 DB::table('workout_exercise_sets')->insert([
@@ -105,7 +106,7 @@ class WorkoutController extends Controller
                                     'number' => $set_number,
                                     'weight' => $set['weight'],
                                     'reps' => $set['reps'],
-                                    'description' => $description ?? null
+                                    'description' => $description
                                 ]);
                             }
                         }
