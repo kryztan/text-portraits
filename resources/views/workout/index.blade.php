@@ -40,7 +40,7 @@
                 <tr>
                     <td colspan="3">{{ $workout->name }}</td>
                 </tr>
-                @foreach ($workout->workout_exercise as $workout_exercise)
+{{--                @foreach ($workout->workout_exercise as $workout_exercise)--}}
 {{--                    @foreach ($workout_exercise->workout_exercise_sets as $workout_exercise_sets)--}}
 {{--                        <tr>--}}
 {{--                            @if ($workout_exercise_sets->number === 1)--}}
@@ -50,7 +50,7 @@
 {{--                            <td>{{ $workout_exercise_sets->reps }} {{ $workout_exercise_sets->description }}</td>--}}
 {{--                        </tr>--}}
 {{--                    @endforeach--}}
-                @endforeach
+{{--                @endforeach--}}
             </table>
         @endforeach
     </div>
