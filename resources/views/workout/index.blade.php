@@ -90,5 +90,5 @@
         });
     });
 
-    console.log(<?= json_decode($workouts, true) ?>);
+    console.log(<?= json_encode($workouts) ?>);
 </script>
