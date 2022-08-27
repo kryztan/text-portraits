@@ -17,7 +17,6 @@
     </script>
 
     <link href="{{ asset('css/normalize-8.0.1.css') }}" rel="stylesheet">
-{{--    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">--}}
     <link href="{{ asset('css/fonts/FuturaBT-ExtraBlackItalic.css') }}" rel="stylesheet">
     @stack('styles')
 </head>
