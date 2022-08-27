@@ -41,7 +41,7 @@
                     <td colspan="3">{{ $workout->name }}</td>
                 </tr>
                 @if ($loop->first)
-                    @foreach ($workout->workout_exercises as $workout_exercise)
+                    @foreach ($workout->workout_exercises() as $workout_exercise)
 {{--                        @foreach ($workout_exercise->workout_exercise_sets as $workout_exercise_sets)--}}
 {{--                            <tr>--}}
 {{--                                @if ($workout_exercise_sets->number === 1)--}}
