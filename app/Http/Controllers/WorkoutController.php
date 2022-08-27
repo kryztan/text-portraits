@@ -13,6 +13,8 @@ class WorkoutController extends Controller
     {
         $workouts = Workout::with('workoutExercise.workoutExerciseSets')->get();
 
+        dd($workouts);
+
         return view('workout.index', [
             'workouts' => $workouts
         ]);
