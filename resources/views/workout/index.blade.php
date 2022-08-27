@@ -89,4 +89,6 @@
             console.log(data);
         });
     });
+
+    console.log(<?= json_decode($workouts, true) ?>);
 </script>

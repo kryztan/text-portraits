@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Workout;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -10,7 +11,11 @@ class WorkoutController extends Controller
 {
     public function index()
     {
-        return view('workout.index');
+        $workouts = Workout::with('workoutExercise.workoutExerciseSets')->get();
+
+        return view('workout.index', [
+            'workouts' => $workouts
+        ]);
     }
 
     public function store(Request $request)
