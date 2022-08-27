@@ -2,6 +2,10 @@
     <textarea class="workouts" name="workouts" rows="5 cols="50"></textarea>
 
     <button type="button" class="submit">Submit!</button>
+
+    <div>
+
+    </div>
 </x-layout>
 
 <script>
