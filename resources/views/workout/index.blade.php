@@ -44,7 +44,8 @@
                     @foreach ($workout_exercise->workoutExerciseSets as $workout_exercise_sets)
                         <tr>
                             @if ($workout_exercise_sets->number === 1)
-                                <td rowspan="{{ count($workout_exercise) }}">{{ $workout_exercise->exercise }}</td>
+{{--                                <td rowspan="{{ count($workout_exercise) }}">{{ $workout_exercise->exercise }}</td>--}}
+                                <td rowspan="3">{{ $workout_exercise->exercise }}</td>
                             @endif
                             <td>{{ $workout_exercise_sets->weight }}</td>
                             <td>{{ $workout_exercise_sets->reps }} {{ $workout_exercise_sets->description }}</td>
