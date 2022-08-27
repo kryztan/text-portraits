@@ -40,19 +40,17 @@
                 <tr>
                     <td colspan="3">{{ $workout->name }}</td>
                 </tr>
-                @if ($loop->first)
-                    @foreach ($workout->workoutExercises as $workout_exercise)
-{{--                        @foreach ($workout_exercise->workout_exercise_sets as $workout_exercise_sets)--}}
-{{--                            <tr>--}}
-{{--                                @if ($workout_exercise_sets->number === 1)--}}
-{{--                                    <td rowspan="{{ count($workout_exercise) }}">{{ $workout_exercise->exercise }}</td>--}}
-{{--                                @endif--}}
-{{--                                <td>{{ $workout_exercise_sets->weight }}</td>--}}
-{{--                                <td>{{ $workout_exercise_sets->reps }} {{ $workout_exercise_sets->description }}</td>--}}
-{{--                            </tr>--}}
-{{--                        @endforeach--}}
+                @foreach ($workout->workoutExercises as $workout_exercise)
+                    @foreach ($workout_exercise->workoutExerciseSets as $workout_exercise_sets)
+                        <tr>
+                            @if ($workout_exercise_sets->number === 1)
+                                <td rowspan="{{ count($workout_exercise) }}">{{ $workout_exercise->exercise }}</td>
+                            @endif
+                            <td>{{ $workout_exercise_sets->weight }}</td>
+                            <td>{{ $workout_exercise_sets->reps }} {{ $workout_exercise_sets->description }}</td>
+                        </tr>
                     @endforeach
-                @endif
+                @endforeach
             </table>
         @endforeach
     </div>
