@@ -9,7 +9,7 @@ class Workout extends Model
 {
     use HasFactory;
 
-    public function workoutExercise()
+    public function workoutExercises()
     {
         return $this->hasMany(WorkoutExercise::class);
     }
