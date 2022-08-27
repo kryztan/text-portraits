@@ -1,4 +1,5 @@
 @push('styles')
+<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 <link href="{{ asset('css/text-portrait.css') }}" rel="stylesheet">
 @endpush
 
