@@ -4,7 +4,24 @@
     <button type="button" class="submit">Submit!</button>
 
     <div>
-
+        <table>
+            <tr>
+                <td colspan="3">Workout 7 29 22</td>
+            </tr>
+            <tr>
+                <td rowspan="3">bench press</td>
+                <td>45w</td>
+                <td>10r</td>
+            </tr>
+            <tr>
+                <td>50w</td>
+                <td>9r</td>
+            </tr>
+            <tr>
+                <td>50w</td>
+                <td>10r</td>
+            </tr>
+        </table>
     </div>
 </x-layout>
 
