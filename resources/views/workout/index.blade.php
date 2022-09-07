@@ -1,42 +1,26 @@
+<style>
+    .workout-tbls-container {
+        margin: 0;
+        padding: 30px 40px;
+        width: 100vw;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .workout-tbl {
+        max-width: 300px;
+        margin: 15px;
+    }
+</style>
+
 <x-layout>
     <textarea class="workouts" name="workouts" rows="5 cols="50"></textarea>
     <button type="button" class="submit">Submit!</button>
 
-    <div style="margin: 30px">
-        <table class="table table-bordered table-light">
-            <tr>
-                <td colspan="3">Workout 7 29 22</td>
-            </tr>
-            <tr>
-                <td rowspan="3">bench press</td>
-                <td>45w</td>
-                <td>10r</td>
-            </tr>
-            <tr>
-                <td>50w</td>
-                <td>9r</td>
-            </tr>
-            <tr>
-                <td>50w</td>
-                <td>10r</td>
-            </tr>
-            <tr>
-                <td rowspan="3">barbell row</td>
-                <td>45w</td>
-                <td>12r -desc</td>
-            </tr>
-            <tr>
-                <td>50w</td>
-                <td>8r -desc</td>
-            </tr>
-            <tr>
-                <td>45w</td>
-                <td>12r</td>
-            </tr>
-        </table>
-
+    <div class="workout-tbls-container">
         @foreach ($workouts as $workout)
-            <table class="table table-bordered table-light">
+            <table class="workout-tbl table table-bordered table-light">
                 <tr>
                     <td colspan="3">{{ $workout->name }}</td>
                 </tr>
@@ -47,7 +31,7 @@
                                 <td rowspan="{{ count($workout_exercise->workoutExerciseSets) }}">{{ $workout_exercise->exercise }}</td>
                             @endif
                             <td>{{ $workout_exercise_set->weight }}</td>
-                            <td>{{ $workout_exercise_set->reps }} {{ $workout_exercise_set->description }}</td>
+                            <td>{{ $workout_exercise_set->reps }} - {{ $workout_exercise_set->description }}</td>
                         </tr>
                     @endforeach
                 @endforeach
