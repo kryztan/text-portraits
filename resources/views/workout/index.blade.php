@@ -12,6 +12,9 @@
         max-width: 300px;
         margin: 15px;
     }
+    .workout-title {
+        text-align: center;
+    }
 </style>
 
 <x-layout>
@@ -22,7 +25,7 @@
         @foreach ($workouts as $workout)
             <table class="workout-tbl table table-bordered table-light">
                 <tr>
-                    <td colspan="3">{{ $workout->name }}</td>
+                    <td class="workout-title" colspan="3">{{ $workout->name }}</td>
                 </tr>
                 @foreach ($workout->workoutExercises as $workout_exercise)
                     @foreach ($workout_exercise->workoutExerciseSets as $workout_exercise_set)
