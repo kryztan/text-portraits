@@ -11,9 +11,16 @@
     .workout-tbl {
         max-width: 300px;
         margin: 15px;
+        font-size: 14px;
+        border: 1px solid #cbcbcb;
     }
     .workout-title {
         text-align: center;
+        font-size: 15px;
+        background-color: #dfd0ff;
+    }
+    .workout-tbl td {
+        padding: 5px;
     }
 </style>
 
@@ -34,7 +41,7 @@
                                 <td rowspan="{{ count($workout_exercise->workoutExerciseSets) }}">{{ $workout_exercise->exercise }}</td>
                             @endif
                             <td>{{ $workout_exercise_set->weight }}</td>
-                            <td>{{ $workout_exercise_set->reps }} - {{ $workout_exercise_set->description }}</td>
+                            <td>{{ $workout_exercise_set->reps }}{{ ($workout_exercise_set->description ? ' - '.$workout_exercise_set->description : '') }}</td>
                         </tr>
                     @endforeach
                 @endforeach
