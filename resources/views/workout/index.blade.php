@@ -3,7 +3,8 @@
         margin: 0;
         padding: 30px 40px;
         width: 100vw;
-        max-width: 100%;
+        /*max-width: 100%;*/
+        max-width: 2000px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
