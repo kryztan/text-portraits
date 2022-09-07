@@ -1,6 +1,6 @@
 <style>
     .workout-tbls-container {
-        margin: 0;
+        margin: 0 auto;
         padding: 30px 40px;
         width: 100vw;
         /*max-width: 100%;*/
