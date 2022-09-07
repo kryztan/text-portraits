@@ -6,7 +6,7 @@
         max-width: 100%;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
     }
     .workout-tbl {
         max-width: 300px;
@@ -14,13 +14,13 @@
         font-size: 14px;
         border: 1px solid #cbcbcb;
     }
+    .workout-tbl tr td {
+        padding: 5px;
+    }
     .workout-tbl .workout-title {
         text-align: center;
         font-size: 15px;
         background-color: #dfd0ff;
-    }
-    .workout-tbl tr td {
-        padding: 5px;
     }
 </style>
 
