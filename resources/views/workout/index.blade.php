@@ -2,6 +2,14 @@
     body {
         background-color: #e7ebf3;
     }
+    .form-container {
+        max-width: 500px;
+        margin: 20px 0 0 20px;
+    }
+    .form-container .submit {
+        float: right;
+        margin-top: 10px;
+    }
     .workout-tbls-container {
         margin: 0 auto;
         padding: 30px 40px;
@@ -29,8 +37,10 @@
 </style>
 
 <x-layout>
-    <textarea class="workouts" name="workouts" rows="5 cols="50"></textarea>
-    <button type="button" class="submit">Submit!</button>
+    <div class="form-container">
+        <textarea class="workouts form-control" name="workouts" rows="5"></textarea>
+        <button type="button" class="submit btn btn-primary btn-sm">Submit</button>
+    </div>
 
     <div class="workout-tbls-container">
         @foreach ($workouts as $workout)
