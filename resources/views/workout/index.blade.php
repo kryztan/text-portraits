@@ -1,5 +1,5 @@
 <style>
-    body {
+    body.body {
         background-color: #e7ebf3;
     }
     .form-container {
@@ -39,7 +39,7 @@
 <x-layout>
     <div class="form-container">
         <textarea class="workouts form-control" name="workouts" rows="5"></textarea>
-        <button type="button" class="submit btn btn-primary btn-sm">Submit</button>
+        <button type="button" class="submit btn btn-secondary btn-sm">Submit</button>
     </div>
 
     <div class="workout-tbls-container">
