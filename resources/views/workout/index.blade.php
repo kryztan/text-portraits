@@ -1,4 +1,7 @@
 <style>
+    body {
+        background-color: #e7ebf3;
+    }
     .workout-tbls-container {
         margin: 0 auto;
         padding: 30px 40px;

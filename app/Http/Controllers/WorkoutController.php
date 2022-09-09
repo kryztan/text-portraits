@@ -11,7 +11,9 @@ class WorkoutController extends Controller
 {
     public function index()
     {
-        $workouts = Workout::with('workoutExercises.workoutExerciseSets')->get();
+        $workouts = Workout::with('workoutExercises.workoutExerciseSets')
+            ->orderByDesc('id')
+            ->get();
 
         return view('workout.index', [
             'workouts' => $workouts
