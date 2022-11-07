@@ -120,7 +120,7 @@ I want you to the bone
             </div>
         </div>
         <div class="text-portrait-container">
-            <p class="text-portrait unselectable" style="background-image: url({{ asset('images/louen-bnw.jpg') }})">
+            <p class="text-portrait unselectable" style="background-image: url({{ asset('images/text-portrait-bnw.jpg') }})">
             </p>
         </div>
     </div>
